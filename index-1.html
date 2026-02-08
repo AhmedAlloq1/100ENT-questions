@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبارات طب الأنف والأذن والحنجرة | ENT</title>
+    <link rel="stylesheet" href="style-1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-ear-listen icon-primary"></i>
+                <h1>اختبارات ENT</h1>
+            </div>
+            <div class="sidebar-content">
+                <h2>فصول الاختبار</h2>
+                <ul id="chapter-list">
+                    <!-- سيتم ملؤه بواسطة JavaScript -->
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <p>© 2026 اختبارات ENT</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <button class="theme-toggle" aria-label="تبديل الوضع">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </button>
+                <h1 id="main-title">اختبارات طب الأنف والأذن والحنجرة</h1>
+            </header>
+
+            <!-- Welcome Screen -->
+            <div id="welcome-screen" class="content-section active">
+                <i class="fas fa-stethoscope icon-primary large-icon"></i>
+                <h2>أهلاً بك في اختبارات ENT</h2>
+                <p>اختر أحد الفصول من القائمة الجانبية لبدء الاختبار</p>
+                <button id="start-fatiha-btn" class="btn btn-primary btn-lg">
+                    <i class="fas fa-play-circle"></i>
+                    ابدأ بالفصل الأول
+                </button>
+            </div>
+
+            <!-- Test Screen -->
+            <div id="test-screen" class="content-section">
+                <div class="test-card">
+                    <div class="test-header">
+                        <button id="back-to-home-btn" class="btn btn-ghost back-btn">
+                            <i class="fas fa-arrow-left"></i>
+                            العودة
+                        </button>
+                        <h2 id="test-chapter-title">اختبار</h2>
+                        <p id="question-counter">السؤال 1 من 10</p>
+                        <progress id="test-progress" value="0" max="100"></progress>
+                    </div>
+                    <div class="test-content">
+                        <div id="question-text" class="question-text">
+                            <p id="question-start"></p>
+                            <span class="placeholder"></span>
+                            <p id="question-end"></p>
+                        </div>
+                        <p class="instruction">اختر الإجابة الصحيحة</p>
+                        <div id="options-container" class="options-container">
+                            <!-- سيتم ملؤه بواسطة JavaScript -->
+                        </div>
+                    </div>
+                    <div class="test-footer">
+                        <p id="feedback-message" class="feedback-message"></p>
+                        <button id="submit-answer-btn" class="btn btn-secondary">
+                            <i class="fas fa-check-circle"></i>
+                            التحقق من الإجابة
+                        </button>
+                        <button id="next-question-btn" class="btn btn-primary" style="display: none;">
+                            <i class="fas fa-arrow-right"></i>
+                            التالي
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Screen -->
+            <div id="results-screen" class="content-section">
+                <div class="results-card">
+                    <i class="fas fa-award icon-primary large-icon"></i>
+                    <h2>أحسنت! لقد أكملت الاختبار</h2>
+                    <p id="results-text">النتيجة ستظهر هنا</p>
+                    <div class="results-actions">
+                        <button id="restart-test-btn" class="btn btn-primary">
+                            <i class="fas fa-redo"></i>
+                            إعادة الاختبار
+                        </button>
+                        <button id="go-home-btn" class="btn btn-outline">
+                            <i class="fas fa-home"></i>
+                            الصفحة الرئيسية
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error Screen -->
+            <div id="error-screen" class="content-section">
+                <i class="fas fa-exclamation-triangle icon-destructive large-icon"></i>
+                <h2>حدث خطأ</h2>
+                <p id="error-message">تفاصيل الخطأ تظهر هنا</p>
+                <button id="error-go-home-btn" class="btn btn-outline">
+                    <i class="fas fa-home"></i>
+                    العودة للصفحة الرئيسية
+                </button>
+            </div>
+
+            <!-- Loading Screen -->
+            <div id="loading-screen" class="content-section">
+                <i class="fas fa-stethoscope icon-primary large-icon animate-pulse"></i>
+                <p>جارٍ تحميل الأسئلة...</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Mobile Menu Toggle (Hidden by default, shows on mobile) -->
+    <button class="menu-toggle" id="menu-toggle" aria-label="فتح/إغلاق القائمة">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <!-- يتم تضمين بيانات الأسئلة من ملف منفصل -->
+    <script src="ent-questions.js"></script>
+    <script src="main-1.js"></script>
+</body>
+</html>
